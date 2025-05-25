@@ -1,0 +1,4 @@
+#Ignore enviroment files
+
+*.env*
+!example.env

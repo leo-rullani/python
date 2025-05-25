@@ -14,14 +14,47 @@
         <ul>
             <li>Variablen speichern Werte. Zuweisung erfolgt mit <code>=</code>.</li>
             <li>Beispiel: <code>name = "Anna"</code> oder <code>age = 25</code>.</li>
-            <li>Python erkennt Datentypen automatisch (String, Zahl, Boolean etc.).</li>
             <li>Mehrere Zuweisungen möglich: <code>name, age = "Lisa", 30</code>.</li>
             <li>Werte tauschen: <code>name, age = age, name</code>.</li>
-            <li>Für Ausgaben: <code>print(name)</code> oder mit f-String: <code>print(f"Hallo {name}")</code>.</li>
-            <li>Variablennamen dürfen nicht mit einer Zahl beginnen und keine Sonderzeichen enthalten.</li>
-            <li>Keine Keywords wie <code>if</code>, <code>class</code>, <code>def</code> als Namen verwenden.</li>
-            <li>Groß- und Kleinschreibung wird unterschieden: <code>name ≠ Name</code>.</li>
-            <li>Vermeide „Magic Numbers“ – nutze stattdessen benannte Variablen.</li>
+            <li>Variablennamen dürfen nicht mit Zahlen beginnen, keine Sonderzeichen oder Keywords.</li>
+            <li>Groß-/Kleinschreibung ist relevant: <code>name ≠ Name</code>.</li>
+            <li>Vermeide „Magic Numbers“ – nutze stattdessen Variablen mit Bedeutung.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Datentypen</h2>
+        <ul>
+            <li>Python erkennt Datentypen automatisch (z. B. <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code>).</li>
+            <li>Mit <code>type(var)</code> kannst du den Typ prüfen.</li>
+            <li>Umwandlungen:
+                <ul>
+                    <li><code>str(25)</code> → "25"</li>
+                    <li><code>int("27")</code> → 27</li>
+                    <li><code>float("2.4")</code> → 2.4</li>
+                    <li><code>bool("")</code> → False, <code>bool("abc")</code> → True</li>
+                </ul>
+            </li>
+            <li>Fehler bei ungültiger Umwandlung: z. B. <code>int("27 Jahre")</code> → <code>ValueError</code>.</li>
+            <li>0, 0.0, "" gelten als <code>False</code>, alle anderen Werte als <code>True</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Umgebungsvariablen</h2>
+        <ul>
+            <li>Sind Variablen des Systems, z. B. <code>PATH</code>, <code>USER</code>.</li>
+            <li>In Python über <code>os.environ["NAME"]</code> abrufbar.</li>
+            <li>Für Projekte: <code>python-dotenv</code> installieren und <code>load_dotenv()</code> nutzen.</li>
+            <li><code>.env</code>-Dateien enthalten Key-Value-Paare, z. B. <code>USER=Sven</code>.</li>
+            <li>Diese Datei gehört in die <code>.gitignore</code> (nicht ins Repository).</li>
+            <li>Beispiel:
+                <pre><code>from dotenv import load_dotenv
+import os
+
+load_dotenv()
+print(os.environ["USER"])</code></pre>
+            </li>
         </ul>
     </section>
 
