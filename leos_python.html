@@ -43,17 +43,66 @@
     <section>
         <h2>3. Umgebungsvariablen</h2>
         <ul>
-            <li>Sind Variablen des Systems, z. B. <code>PATH</code>, <code>USER</code>.</li>
-            <li>In Python über <code>os.environ["NAME"]</code> abrufbar.</li>
-            <li>Für Projekte: <code>python-dotenv</code> installieren und <code>load_dotenv()</code> nutzen.</li>
-            <li><code>.env</code>-Dateien enthalten Key-Value-Paare, z. B. <code>USER=Sven</code>.</li>
-            <li>Diese Datei gehört in die <code>.gitignore</code> (nicht ins Repository).</li>
+            <li>Systemvariablen wie <code>PATH</code> oder <code>USER</code>.</li>
+            <li>Zugriff in Python über <code>os.environ["NAME"]</code>.</li>
+            <li><code>python-dotenv</code> ermöglicht das Einlesen einer <code>.env</code>-Datei.</li>
+            <li><code>.env</code>-Datei enthält Key-Value-Paare, z. B. <code>USER_NAME=leo</code>.</li>
+            <li><code>.env</code> gehört in die <code>.gitignore</code>.</li>
             <li>Beispiel:
                 <pre><code>from dotenv import load_dotenv
 import os
-
 load_dotenv()
-print(os.environ["USER"])</code></pre>
+print(os.environ["USER_NAME"])</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Strings definieren</h2>
+        <ul>
+            <li>Strings mit <code>"Text"</code> oder <code>'Text'</code> definieren.</li>
+            <li>Dreifache Anführungszeichen <code>""" """</code> für mehrzeilige Strings.</li>
+            <li>Empfehlung:
+                <ul>
+                    <li>Ein Zeichen: <code>'A'</code></li>
+                    <li>Mehrere Zeichen: <code>"Hallo"</code></li>
+                    <li>Leerer String: <code>""</code></li>
+                </ul>
+            </li>
+            <li>Mehrzeilige Strings behalten Formatierung – ideal für ASCII-Art oder Konsolenprogramme.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Zeichenzugriff & Substrings</h2>
+        <ul>
+            <li>Zeichenzugriff mit <code>string[index]</code>.</li>
+            <li>Index beginnt bei 0: <code>name[2]</code> → drittes Zeichen.</li>
+            <li>Negative Indizes zählen von hinten: <code>-1</code> = letztes Zeichen.</li>
+            <li><code>len(string)</code> gibt die Länge zurück.</li>
+            <li><code>string[len(string)-1]</code> → letztes Zeichen.</li>
+            <li>Fehlzugriff außerhalb des Bereichs führt zu <code>IndexError</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Slicing</h2>
+        <ul>
+            <li>Slicing-Syntax: <code>string[start:end]</code> – <code>end</code> ist exklusiv.</li>
+            <li><code>string[0:3]</code> → erste 3 Zeichen.</li>
+            <li><code>string[:5]</code> → von Anfang bis Index 4.</li>
+            <li><code>string[3:]</code> → ab Index 3 bis zum Ende.</li>
+            <li><code>string[:]</code> → gesamter String.</li>
+            <li>Negative Indizes funktionieren auch: <code>string[-3:-1]</code> → vorletzte 2 Zeichen.</li>
+            <li>Start- und Endindex außerhalb der Grenzen sind erlaubt (keine Fehler).</li>
+            <li>Einzelzugriff wie <code>string[100]</code> → <code>IndexError</code>.</li>
+            <li>Beispiele:
+                <ul>
+                    <li><code>"Maximilian"[0:3]</code> → "Max"</li>
+                    <li><code>"Maximilian"[3:5]</code> → "im"</li>
+                    <li><code>"Maximilian"[4:8]</code> → "ilia"</li>
+                    <li><code>"Maximilian"[7:]</code> → "ian"</li>
+                </ul>
             </li>
         </ul>
     </section>
