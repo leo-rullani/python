@@ -48,12 +48,6 @@
             <li><code>python-dotenv</code> ermöglicht das Einlesen einer <code>.env</code>-Datei.</li>
             <li><code>.env</code>-Datei enthält Key-Value-Paare, z. B. <code>USER_NAME=leo</code>.</li>
             <li><code>.env</code> gehört in die <code>.gitignore</code>.</li>
-            <li>Beispiel:
-                <pre><code>from dotenv import load_dotenv
-import os
-load_dotenv()
-print(os.environ["USER_NAME"])</code></pre>
-            </li>
         </ul>
     </section>
 
@@ -95,15 +89,53 @@ print(os.environ["USER_NAME"])</code></pre>
             <li><code>string[:]</code> → gesamter String.</li>
             <li>Negative Indizes funktionieren auch: <code>string[-3:-1]</code> → vorletzte 2 Zeichen.</li>
             <li>Start- und Endindex außerhalb der Grenzen sind erlaubt (keine Fehler).</li>
-            <li>Einzelzugriff wie <code>string[100]</code> → <code>IndexError</code>.</li>
-            <li>Beispiele:
-                <ul>
-                    <li><code>"Maximilian"[0:3]</code> → "Max"</li>
-                    <li><code>"Maximilian"[3:5]</code> → "im"</li>
-                    <li><code>"Maximilian"[4:8]</code> → "ilia"</li>
-                    <li><code>"Maximilian"[7:]</code> → "ian"</li>
-                </ul>
-            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>7. Arithmetische Operatoren mit Strings</h2>
+        <ul>
+            <li><code>+</code> verkettet Strings (z. B. <code>"a" + "b"</code> → "ab").</li>
+            <li><code>*</code> dupliziert Strings (z. B. <code>"!" * 3</code> → "!!!").</li>
+            <li>Reihenfolge bei <code>*</code> egal: <code>3 * "a" == "a" * 3</code>.</li>
+            <li>Nur Kombination <code>String * int</code> ist erlaubt – nicht <code>String * String</code> oder <code>String - String</code>.</li>
+            <li>Potenzieren mit <code>**</code> sowie Division <code>/</code> ist bei Strings nicht erlaubt.</li>
+            <li>Fehlerfälle wie <code>"a" - "b"</code> oder <code>"a" ** 2</code> → <code>TypeError</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>8. String-Methoden</h2>
+        <ul>
+            <li><code>upper()</code>, <code>lower()</code>, <code>capitalize()</code> – Buchstaben umwandeln.</li>
+            <li><code>isupper()</code>, <code>islower()</code>, <code>isnumeric()</code>, <code>isalpha()</code> – Rückgabe von <code>True</code> oder <code>False</code>.</li>
+            <li><code>split(sep)</code>, <code>splitlines()</code> – Zerlegen von Strings in Listen.</li>
+            <li><code>strip()</code> – entfernt Leerzeichen am Anfang/Ende.</li>
+            <li><code>replace(old, new)</code> – ersetzt Zeichen oder Substrings.</li>
+            <li><code>count(sub)</code> – zählt Vorkommen eines Zeichens/Substrings.</li>
+            <li><code>index(sub)</code> – Position des ersten Auftretens, Fehler bei Nichtfund.</li>
+            <li><code>find(sub)</code> – wie <code>index()</code>, aber ohne Fehler (liefert <code>-1</code>).</li>
+            <li><code>"sub" in string</code> – prüft, ob Substring enthalten ist → <code>True</code> oder <code>False</code>.</li>
+        </ul>
+    </section>
+
+        <section>
+        <h2>9. Anwendungsbeispiele & Aufgaben zu String-Methoden</h2>
+        <ul>
+            <li><code>upper()</code> wandelt alle Buchstaben in Großbuchstaben um.</li>
+            <li><code>lower()</code> macht alle Buchstaben klein.</li>
+            <li><code>capitalize()</code> schreibt nur den ersten Buchstaben groß, Rest klein.</li>
+            <li><code>zfill(n)</code> füllt einen String mit führenden Nullen auf Länge <code>n</code> auf.</li>
+            <li><code>islower()</code> / <code>isupper()</code> prüfen, ob alle Buchstaben klein/groß sind.</li>
+            <li><code>isalpha()</code> prüft, ob nur Buchstaben enthalten sind.</li>
+            <li><code>isnumeric()</code> prüft, ob nur Ziffern enthalten sind.</li>
+            <li><code>split(";")</code> trennt einen String anhand eines Trennzeichens (liefert Liste).</li>
+            <li><code>replace("alt", "neu")</code> ersetzt Teilstrings gezielt.</li>
+            <li><code>count("x")</code> zählt Vorkommen eines Zeichens oder Substrings.</li>
+            <li><code>find("x")</code> liefert Index oder <code>-1</code>, wenn nicht gefunden.</li>
+            <li><code>index("x")</code> wie <code>find</code>, aber mit Fehler bei Nichtfund.</li>
+            <li><code>"x" in string</code> prüft, ob <code>x</code> im String enthalten ist.</li>
+            <li><code>string[::-1]</code> kehrt einen String um (Reversal per Slicing).</li>
         </ul>
     </section>
 
