@@ -215,6 +215,91 @@
         <li>Die Kurzform spart Wiederholung der Variable und verbessert Lesbarkeit.</li>
     </ul>
 </section>
+<section>
+    <h2>12. Vergleichsoperatoren</h2>
+    <ul>
+        <li>Vergleichsoperatoren geben immer <code>True</code> oder <code>False</code> zurück.</li>
+        <li>Verfügbare Operatoren:
+            <ul>
+                <li><code>a < b</code> → kleiner als</li>
+                <li><code>a <= b</code> → kleiner oder gleich</li>
+                <li><code>a == b</code> → gleich</li>
+                <li><code>a != b</code> → ungleich</li>
+                <li><code>a > b</code> → größer als</li>
+                <li><code>a >= b</code> → größer oder gleich</li>
+            </ul>
+        </li>
+        <li>Funktioniert mit Zahlen, Strings (alphabetisch) und später auch mit Objekten.</li>
+        <li>Beispiel:
+            <code>"Flo" < "Florian"</code> → <code>True</code> (wegen alphabetischer Ordnung)</li>
+        <li>Alle Vergleichsoperatoren haben die gleiche Bindungsstärke und werden von links nach rechts ausgewertet.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>13. Logische Operatoren</h2>
+    <ul>
+        <li>Verknüpfen Wahrheitswerte (<code>True</code> oder <code>False</code>).</li>
+        <li>Ergebnisse sind stets <code>True</code> oder <code>False</code>.</li>
+        <li>Operatoren:
+            <ul>
+                <li><code>and</code> → nur <code>True</code>, wenn beide Bedingungen <code>True</code> sind.</li>
+                <li><code>or</code> → <code>True</code>, wenn mindestens eine Bedingung <code>True</code> ist.</li>
+                <li><code>not</code> → kehrt den Wahrheitswert um.</li>
+                <li><code>^</code> (XOR) → <code>True</code>, wenn genau eine Bedingung <code>True</code> ist.</li>
+            </ul>
+        </li>
+        <li>Beispiele:
+            <ul>
+                <li><code>2 &lt; 3 and 3 &lt; 5</code> → <code>True</code></li>
+                <li><code>not (3 == 5)</code> → <code>True</code></li>
+                <li><code>True ^ False</code> → <code>True</code></li>
+            </ul>
+        </li>
+        <li>Operatorrangfolge:
+            <ul>
+                <li><strong>1.</strong> <code>not</code></li>
+                <li><strong>2.</strong> <code>and</code></li>
+                <li><strong>3.</strong> <code>or</code></li>
+            </ul>
+        </li>
+        <li>Nutze <code>()</code>, um Auswertungsreihenfolge gezielt zu steuern.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>14. Logik-Aufgaben & Kombinationen</h2>
+    <ul>
+        <li><strong>Operatoren:</strong> <code>and</code>, <code>or</code>, <code>not</code>, <code>^</code> (XOR).</li>
+        <li><strong>Ergebnisse:</strong> Immer <code>True</code> oder <code>False</code>.</li>
+        <li><strong>Operatorrangfolge:</strong>
+            <ul>
+                <li><code>not</code> bindet am stärksten</li>
+                <li><code>and</code> folgt</li>
+                <li><code>or</code> danach</li>
+                <li><code>^</code> (XOR) ist ein bitweiser Operator mit hoher Bindung</li>
+            </ul>
+        </li>
+        <li><strong>Verwendung in Bedingungen:</strong> Vergleichs- und arithmetische Operatoren werden zuerst ausgewertet, danach logische Operatoren.</li>
+        <li><strong>Beispiele:</strong>
+            <ul>
+                <li><code>True and False or True</code> → <code>True</code></li>
+                <li><code>not False</code> → <code>True</code></li>
+                <li><code>True ^ True</code> → <code>False</code></li>
+                <li><code>2 % 5 == 2</code> → <code>True</code></li>
+                <li><code>not not not (2 % 5 == 2)</code> → <code>False</code></li>
+            </ul>
+        </li>
+        <li><strong>Unterschied:</strong>
+            <ul>
+                <li><code>or</code>: beides darf <code>True</code> sein (z. B. „Milch oder Zucker“)</li>
+                <li><code>^</code>: nur eins darf <code>True</code> sein („entweder Big Mac oder Big Tasty“)</li>
+            </ul>
+        </li>
+        <li><strong>Mix mit Zahlen:</strong> <code>True ^ 0</code> ergibt <code>1</code> (kein Boolean, sondern Integer!)</li>
+    </ul>
+</section>
+
 
 </body>
 
