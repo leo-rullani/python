@@ -25,7 +25,8 @@
     <section>
         <h2>2. Datentypen</h2>
         <ul>
-            <li>Python erkennt Datentypen automatisch (z. B. <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code>).</li>
+            <li>Python erkennt Datentypen automatisch (z. B. <code>str</code>, <code>int</code>, <code>float</code>,
+                <code>bool</code>).</li>
             <li>Mit <code>type(var)</code> kannst du den Typ prüfen.</li>
             <li>Umwandlungen:
                 <ul>
@@ -98,7 +99,8 @@
             <li><code>+</code> verkettet Strings (z. B. <code>"a" + "b"</code> → "ab").</li>
             <li><code>*</code> dupliziert Strings (z. B. <code>"!" * 3</code> → "!!!").</li>
             <li>Reihenfolge bei <code>*</code> egal: <code>3 * "a" == "a" * 3</code>.</li>
-            <li>Nur Kombination <code>String * int</code> ist erlaubt – nicht <code>String * String</code> oder <code>String - String</code>.</li>
+            <li>Nur Kombination <code>String * int</code> ist erlaubt – nicht <code>String * String</code> oder
+                <code>String - String</code>.</li>
             <li>Potenzieren mit <code>**</code> sowie Division <code>/</code> ist bei Strings nicht erlaubt.</li>
             <li>Fehlerfälle wie <code>"a" - "b"</code> oder <code>"a" ** 2</code> → <code>TypeError</code>.</li>
         </ul>
@@ -108,18 +110,20 @@
         <h2>8. String-Methoden</h2>
         <ul>
             <li><code>upper()</code>, <code>lower()</code>, <code>capitalize()</code> – Buchstaben umwandeln.</li>
-            <li><code>isupper()</code>, <code>islower()</code>, <code>isnumeric()</code>, <code>isalpha()</code> – Rückgabe von <code>True</code> oder <code>False</code>.</li>
+            <li><code>isupper()</code>, <code>islower()</code>, <code>isnumeric()</code>, <code>isalpha()</code> –
+                Rückgabe von <code>True</code> oder <code>False</code>.</li>
             <li><code>split(sep)</code>, <code>splitlines()</code> – Zerlegen von Strings in Listen.</li>
             <li><code>strip()</code> – entfernt Leerzeichen am Anfang/Ende.</li>
             <li><code>replace(old, new)</code> – ersetzt Zeichen oder Substrings.</li>
             <li><code>count(sub)</code> – zählt Vorkommen eines Zeichens/Substrings.</li>
             <li><code>index(sub)</code> – Position des ersten Auftretens, Fehler bei Nichtfund.</li>
             <li><code>find(sub)</code> – wie <code>index()</code>, aber ohne Fehler (liefert <code>-1</code>).</li>
-            <li><code>"sub" in string</code> – prüft, ob Substring enthalten ist → <code>True</code> oder <code>False</code>.</li>
+            <li><code>"sub" in string</code> – prüft, ob Substring enthalten ist → <code>True</code> oder
+                <code>False</code>.</li>
         </ul>
     </section>
 
-        <section>
+    <section>
         <h2>9. Anwendungsbeispiele & Aufgaben zu String-Methoden</h2>
         <ul>
             <li><code>upper()</code> wandelt alle Buchstaben in Großbuchstaben um.</li>
@@ -140,222 +144,251 @@
     </section>
 
     <!-- Arithmetische Operatoren in Python -->
-<section id="arithmetische-operatoren">
-  <h2>🧮 Arithmetische Operatoren in Python</h2>
-  <p>Hier siehst du eine Übersicht typischer Rechenoperationen und deren Verhalten in Python:</p>
+    <section id="arithmetische-operatoren">
+        <h2>🧮 Arithmetische Operatoren in Python</h2>
+        <p>Hier siehst du eine Übersicht typischer Rechenoperationen und deren Verhalten in Python:</p>
 
-  <h3>1. Grundrechenarten</h3>
-  <ul>
-    <li><code>12 * 12</code> → <strong>144</strong></li>
-    <li><code>2.5 + 3.5</code> → <strong>6.0</strong> (Float + Float = Float)</li>
-    <li><code>20 / 5</code> → <strong>4.0</strong> (Division liefert immer Float)</li>
-    <li><code>15 - 3 * 5</code> → <strong>0</strong> (Punktrechnung vor Strichrechnung)</li>
-  </ul>
+        <h3>1. Grundrechenarten</h3>
+        <ul>
+            <li><code>12 * 12</code> → <strong>144</strong></li>
+            <li><code>2.5 + 3.5</code> → <strong>6.0</strong> (Float + Float = Float)</li>
+            <li><code>20 / 5</code> → <strong>4.0</strong> (Division liefert immer Float)</li>
+            <li><code>15 - 3 * 5</code> → <strong>0</strong> (Punktrechnung vor Strichrechnung)</li>
+        </ul>
 
-  <h3>2. Integer Division <code>//</code></h3>
-  <ul>
-    <li><code>8 + 10 // 4</code> → <strong>10</strong></li>
-    <li><code>8 + 10 / 4</code> → <strong>10.5</strong></li>
-    <li><code>20 / (5 - 4)</code> → <strong>20.0</strong></li>
-  </ul>
+        <h3>2. Integer Division <code>//</code></h3>
+        <ul>
+            <li><code>8 + 10 // 4</code> → <strong>10</strong></li>
+            <li><code>8 + 10 / 4</code> → <strong>10.5</strong></li>
+            <li><code>20 / (5 - 4)</code> → <strong>20.0</strong></li>
+        </ul>
 
-  <h3>3. Kombinationen & Reihenfolge</h3>
-  <ul>
-    <li><code>4 * 2.5 / 4</code> → <strong>2.5</strong> (Links-nach-rechts-Auswertung)</li>
-    <li><code>1 // 2 - 3 // 4</code> → <strong>0</strong></li>
-  </ul>
+        <h3>3. Kombinationen & Reihenfolge</h3>
+        <ul>
+            <li><code>4 * 2.5 / 4</code> → <strong>2.5</strong> (Links-nach-rechts-Auswertung)</li>
+            <li><code>1 // 2 - 3 // 4</code> → <strong>0</strong></li>
+        </ul>
 
-  <h3>4. Modulo <code>%</code></h3>
-  <ul>
-    <li><code>12 % 5</code> → <strong>2</strong></li>
-    <li><code>5 % 12</code> → <strong>5</strong></li>
-  </ul>
+        <h3>4. Modulo <code>%</code></h3>
+        <ul>
+            <li><code>12 % 5</code> → <strong>2</strong></li>
+            <li><code>5 % 12</code> → <strong>5</strong></li>
+        </ul>
 
-  <h3>5. Potenzen <code>**</code></h3>
-  <ul>
-    <li><code>2 ** 3</code> → <strong>8</strong></li>
-    <li><code>4 ** (8 - 5)</code> → <strong>64</strong></li>
-    <li><code>2 ** 8 // 2</code> → <strong>128</strong></li>
-    <li><code>5 ** 2 * 3</code> → <strong>75</strong></li>
-  </ul>
+        <h3>5. Potenzen <code>**</code></h3>
+        <ul>
+            <li><code>2 ** 3</code> → <strong>8</strong></li>
+            <li><code>4 ** (8 - 5)</code> → <strong>64</strong></li>
+            <li><code>2 ** 8 // 2</code> → <strong>128</strong></li>
+            <li><code>5 ** 2 * 3</code> → <strong>75</strong></li>
+        </ul>
 
-  <h3>6. String-Operationen</h3>
-  <ul>
-    <li><code>"Apfel" + "Baum"</code> → <strong>"ApfelBaum"</strong></li>
-    <li><code>5 * ("a" + "b")</code> → <strong>"ababababab"</strong></li>
-    <li><code>"x" * 2 ** 3</code> → <strong>"xxxxxxxx"</strong></li>
-  </ul>
+        <h3>6. String-Operationen</h3>
+        <ul>
+            <li><code>"Apfel" + "Baum"</code> → <strong>"ApfelBaum"</strong></li>
+            <li><code>5 * ("a" + "b")</code> → <strong>"ababababab"</strong></li>
+            <li><code>"x" * 2 ** 3</code> → <strong>"xxxxxxxx"</strong></li>
+        </ul>
 
-  <h3>7. Sonderfälle</h3>
-  <ul>
-    <li><code>42 % 43</code> → <strong>42</strong></li>
-    <li><code>1024 % 2</code> → <strong>0</strong></li>
-    <li><code>5 * 4 * 3 * 2 * 1.0</code> → <strong>120.0</strong></li>
-    <li><code>0 * "Flo"</code> → <strong>""</strong> (leerer String)</li>
-    <li><code>"XYZ" * (12 % 5)</code> → <strong>"XYZXYZ"</strong></li>
-  </ul>
-</section>
+        <h3>7. Sonderfälle</h3>
+        <ul>
+            <li><code>42 % 43</code> → <strong>42</strong></li>
+            <li><code>1024 % 2</code> → <strong>0</strong></li>
+            <li><code>5 * 4 * 3 * 2 * 1.0</code> → <strong>120.0</strong></li>
+            <li><code>0 * "Flo"</code> → <strong>""</strong> (leerer String)</li>
+            <li><code>"XYZ" * (12 % 5)</code> → <strong>"XYZXYZ"</strong></li>
+        </ul>
+    </section>
 
-<section>
-    <h2>11. Inkrementieren, Dekrementieren & Kurzschreibweisen</h2>
-    <ul>
-        <li>Python kennt keine <code>i++</code> oder <code>i--</code> Operatoren wie in C/Java.</li>
-        <li>Stattdessen: kombinierte Zuweisungsoperatoren verwenden.</li>
-        <li>Beispiele:
-            <ul>
-                <li><code>i += 1</code> → Erhöhe <code>i</code> um 1</li>
-                <li><code>i -= 1</code> → Verringere <code>i</code> um 1</li>
-                <li><code>i *= 2</code> → Multipliziere <code>i</code> mit 2</li>
-                <li><code>i /= 2</code> → Division mit float-Ergebnis</li>
-                <li><code>i //= 2</code> → Ganzzahldivision (Integer)</li>
-                <li><code>i **= 2</code> → Quadrat von <code>i</code></li>
-                <li><code>i %= 3</code> → Rest bei Division durch 3</li>
-            </ul>
-        </li>
-        <li>Die Kurzform spart Wiederholung der Variable und verbessert Lesbarkeit.</li>
-    </ul>
-</section>
-<section>
-    <h2>12. Vergleichsoperatoren</h2>
-    <ul>
-        <li>Vergleichsoperatoren geben immer <code>True</code> oder <code>False</code> zurück.</li>
-        <li>Verfügbare Operatoren:
-            <ul>
-                <li><code>a < b</code> → kleiner als</li>
-                <li><code>a <= b</code> → kleiner oder gleich</li>
-                <li><code>a == b</code> → gleich</li>
-                <li><code>a != b</code> → ungleich</li>
-                <li><code>a > b</code> → größer als</li>
-                <li><code>a >= b</code> → größer oder gleich</li>
-            </ul>
-        </li>
-        <li>Funktioniert mit Zahlen, Strings (alphabetisch) und später auch mit Objekten.</li>
-        <li>Beispiel:
-            <code>"Flo" < "Florian"</code> → <code>True</code> (wegen alphabetischer Ordnung)</li>
-        <li>Alle Vergleichsoperatoren haben die gleiche Bindungsstärke und werden von links nach rechts ausgewertet.</li>
-    </ul>
-</section>
+    <section>
+        <h2>11. Inkrementieren, Dekrementieren & Kurzschreibweisen</h2>
+        <ul>
+            <li>Python kennt keine <code>i++</code> oder <code>i--</code> Operatoren wie in C/Java.</li>
+            <li>Stattdessen: kombinierte Zuweisungsoperatoren verwenden.</li>
+            <li>Beispiele:
+                <ul>
+                    <li><code>i += 1</code> → Erhöhe <code>i</code> um 1</li>
+                    <li><code>i -= 1</code> → Verringere <code>i</code> um 1</li>
+                    <li><code>i *= 2</code> → Multipliziere <code>i</code> mit 2</li>
+                    <li><code>i /= 2</code> → Division mit float-Ergebnis</li>
+                    <li><code>i //= 2</code> → Ganzzahldivision (Integer)</li>
+                    <li><code>i **= 2</code> → Quadrat von <code>i</code></li>
+                    <li><code>i %= 3</code> → Rest bei Division durch 3</li>
+                </ul>
+            </li>
+            <li>Die Kurzform spart Wiederholung der Variable und verbessert Lesbarkeit.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>12. Vergleichsoperatoren</h2>
+        <ul>
+            <li>Vergleichsoperatoren geben immer <code>True</code> oder <code>False</code> zurück.</li>
+            <li>Verfügbare Operatoren:
+                <ul>
+                    <li><code>a < b</code> → kleiner als</li>
+                    <li><code>a <= b</code> → kleiner oder gleich</li>
+                    <li><code>a == b</code> → gleich</li>
+                    <li><code>a != b</code> → ungleich</li>
+                    <li><code>a > b</code> → größer als</li>
+                    <li><code>a >= b</code> → größer oder gleich</li>
+                </ul>
+            </li>
+            <li>Funktioniert mit Zahlen, Strings (alphabetisch) und später auch mit Objekten.</li>
+            <li>Beispiel:
+                <code>"Flo" < "Florian"</code> → <code>True</code> (wegen alphabetischer Ordnung)
+            </li>
+            <li>Alle Vergleichsoperatoren haben die gleiche Bindungsstärke und werden von links nach rechts ausgewertet.
+            </li>
+        </ul>
+    </section>
 
-<section>
-    <h2>13. Logische Operatoren</h2>
-    <ul>
-        <li>Verknüpfen Wahrheitswerte (<code>True</code> oder <code>False</code>).</li>
-        <li>Ergebnisse sind stets <code>True</code> oder <code>False</code>.</li>
-        <li>Operatoren:
-            <ul>
-                <li><code>and</code> → nur <code>True</code>, wenn beide Bedingungen <code>True</code> sind.</li>
-                <li><code>or</code> → <code>True</code>, wenn mindestens eine Bedingung <code>True</code> ist.</li>
-                <li><code>not</code> → kehrt den Wahrheitswert um.</li>
-                <li><code>^</code> (XOR) → <code>True</code>, wenn genau eine Bedingung <code>True</code> ist.</li>
-            </ul>
-        </li>
-        <li>Beispiele:
-            <ul>
-                <li><code>2 &lt; 3 and 3 &lt; 5</code> → <code>True</code></li>
-                <li><code>not (3 == 5)</code> → <code>True</code></li>
-                <li><code>True ^ False</code> → <code>True</code></li>
-            </ul>
-        </li>
-        <li>Operatorrangfolge:
-            <ul>
-                <li><strong>1.</strong> <code>not</code></li>
-                <li><strong>2.</strong> <code>and</code></li>
-                <li><strong>3.</strong> <code>or</code></li>
-            </ul>
-        </li>
-        <li>Nutze <code>()</code>, um Auswertungsreihenfolge gezielt zu steuern.</li>
-    </ul>
-</section>
+    <section>
+        <h2>13. Logische Operatoren</h2>
+        <ul>
+            <li>Verknüpfen Wahrheitswerte (<code>True</code> oder <code>False</code>).</li>
+            <li>Ergebnisse sind stets <code>True</code> oder <code>False</code>.</li>
+            <li>Operatoren:
+                <ul>
+                    <li><code>and</code> → nur <code>True</code>, wenn beide Bedingungen <code>True</code> sind.</li>
+                    <li><code>or</code> → <code>True</code>, wenn mindestens eine Bedingung <code>True</code> ist.</li>
+                    <li><code>not</code> → kehrt den Wahrheitswert um.</li>
+                    <li><code>^</code> (XOR) → <code>True</code>, wenn genau eine Bedingung <code>True</code> ist.</li>
+                </ul>
+            </li>
+            <li>Beispiele:
+                <ul>
+                    <li><code>2 &lt; 3 and 3 &lt; 5</code> → <code>True</code></li>
+                    <li><code>not (3 == 5)</code> → <code>True</code></li>
+                    <li><code>True ^ False</code> → <code>True</code></li>
+                </ul>
+            </li>
+            <li>Operatorrangfolge:
+                <ul>
+                    <li><strong>1.</strong> <code>not</code></li>
+                    <li><strong>2.</strong> <code>and</code></li>
+                    <li><strong>3.</strong> <code>or</code></li>
+                </ul>
+            </li>
+            <li>Nutze <code>()</code>, um Auswertungsreihenfolge gezielt zu steuern.</li>
+        </ul>
+    </section>
 
-<section>
-    <h2>14. Logik-Aufgaben & Kombinationen</h2>
-    <ul>
-        <li><strong>Operatoren:</strong> <code>and</code>, <code>or</code>, <code>not</code>, <code>^</code> (XOR).</li>
-        <li><strong>Ergebnisse:</strong> Immer <code>True</code> oder <code>False</code>.</li>
-        <li><strong>Operatorrangfolge:</strong>
-            <ul>
-                <li><code>not</code> bindet am stärksten</li>
-                <li><code>and</code> folgt</li>
-                <li><code>or</code> danach</li>
-                <li><code>^</code> (XOR) ist ein bitweiser Operator mit hoher Bindung</li>
-            </ul>
-        </li>
-        <li><strong>Verwendung in Bedingungen:</strong> Vergleichs- und arithmetische Operatoren werden zuerst ausgewertet, danach logische Operatoren.</li>
-        <li><strong>Beispiele:</strong>
-            <ul>
-                <li><code>True and False or True</code> → <code>True</code></li>
-                <li><code>not False</code> → <code>True</code></li>
-                <li><code>True ^ True</code> → <code>False</code></li>
-                <li><code>2 % 5 == 2</code> → <code>True</code></li>
-                <li><code>not not not (2 % 5 == 2)</code> → <code>False</code></li>
-            </ul>
-        </li>
-        <li><strong>Unterschied:</strong>
-            <ul>
-                <li><code>or</code>: beides darf <code>True</code> sein (z. B. „Milch oder Zucker“)</li>
-                <li><code>^</code>: nur eins darf <code>True</code> sein („entweder Big Mac oder Big Tasty“)</li>
-            </ul>
-        </li>
-        <li><strong>Mix mit Zahlen:</strong> <code>True ^ 0</code> ergibt <code>1</code> (kein Boolean, sondern Integer!)</li>
-    </ul>
-</section>
+    <section>
+        <h2>14. Logik-Aufgaben & Kombinationen</h2>
+        <ul>
+            <li><strong>Operatoren:</strong> <code>and</code>, <code>or</code>, <code>not</code>, <code>^</code> (XOR).
+            </li>
+            <li><strong>Ergebnisse:</strong> Immer <code>True</code> oder <code>False</code>.</li>
+            <li><strong>Operatorrangfolge:</strong>
+                <ul>
+                    <li><code>not</code> bindet am stärksten</li>
+                    <li><code>and</code> folgt</li>
+                    <li><code>or</code> danach</li>
+                    <li><code>^</code> (XOR) ist ein bitweiser Operator mit hoher Bindung</li>
+                </ul>
+            </li>
+            <li><strong>Verwendung in Bedingungen:</strong> Vergleichs- und arithmetische Operatoren werden zuerst
+                ausgewertet, danach logische Operatoren.</li>
+            <li><strong>Beispiele:</strong>
+                <ul>
+                    <li><code>True and False or True</code> → <code>True</code></li>
+                    <li><code>not False</code> → <code>True</code></li>
+                    <li><code>True ^ True</code> → <code>False</code></li>
+                    <li><code>2 % 5 == 2</code> → <code>True</code></li>
+                    <li><code>not not not (2 % 5 == 2)</code> → <code>False</code></li>
+                </ul>
+            </li>
+            <li><strong>Unterschied:</strong>
+                <ul>
+                    <li><code>or</code>: beides darf <code>True</code> sein (z. B. „Milch oder Zucker“)</li>
+                    <li><code>^</code>: nur eins darf <code>True</code> sein („entweder Big Mac oder Big Tasty“)</li>
+                </ul>
+            </li>
+            <li><strong>Mix mit Zahlen:</strong> <code>True ^ 0</code> ergibt <code>1</code> (kein Boolean, sondern
+                Integer!)</li>
+        </ul>
+    </section>
 
-<section>
-    <h2>15. Operatorrangfolge</h2>
-    <p>Die folgende Tabelle zeigt die Reihenfolge, in der Operatoren in Python ausgewertet werden (von oben nach unten – höchste zu niedrigster Bindung):</p>
-    <table border="1" cellpadding="6" cellspacing="0">
-        <thead>
-            <tr>
-                <th>Priorität</th>
-                <th>Operator(en)</th>
-                <th>Beschreibung</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td><code>**</code></td>
-                <td>Potenz (Exponentiation)</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><code>*</code>, <code>/</code>, <code>//</code>, <code>%</code></td>
-                <td>Multiplikation, Division, ganzzahlige Division, Modulo</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><code>+</code>, <code>-</code></td>
-                <td>Addition, Subtraktion</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><code>^</code></td>
-                <td>Bitweises XOR (zählt technisch zu bitweisen Operatoren)</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td><code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>, <code>&gt;=</code>, <code>&gt;</code></td>
-                <td>Vergleichsoperatoren</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td><code>not</code></td>
-                <td>Logische Negation</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td><code>and</code></td>
-                <td>Logisches UND</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td><code>or</code></td>
-                <td>Logisches ODER (schwächste Bindung)</td>
-            </tr>
-        </tbody>
-    </table>
-    <p>Tipp: Wenn du eine andere Reihenfolge erzwingen willst, nutze Klammern <code>()</code>.</p>
-</section>
+    <section>
+        <h2>15. Operatorrangfolge</h2>
+        <p>Die folgende Tabelle zeigt die Reihenfolge, in der Operatoren in Python ausgewertet werden (von oben nach
+            unten – höchste zu niedrigster Bindung):</p>
+        <table border="1" cellpadding="6" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Priorität</th>
+                    <th>Operator(en)</th>
+                    <th>Beschreibung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><code>**</code></td>
+                    <td>Potenz (Exponentiation)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><code>*</code>, <code>/</code>, <code>//</code>, <code>%</code></td>
+                    <td>Multiplikation, Division, ganzzahlige Division, Modulo</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><code>+</code>, <code>-</code></td>
+                    <td>Addition, Subtraktion</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><code>^</code></td>
+                    <td>Bitweises XOR (zählt technisch zu bitweisen Operatoren)</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>, <code>&gt;=</code>,
+                        <code>&gt;</code></td>
+                    <td>Vergleichsoperatoren</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><code>not</code></td>
+                    <td>Logische Negation</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><code>and</code></td>
+                    <td>Logisches UND</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><code>or</code></td>
+                    <td>Logisches ODER (schwächste Bindung)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Tipp: Wenn du eine andere Reihenfolge erzwingen willst, nutze Klammern <code>()</code>.</p>
+    </section>
+    <section>
+        <h2>11. If-Anweisung</h2>
+        <ul>
+            <li><code>if</code> prüft eine Bedingung und führt Code nur aus, wenn sie <code>True</code> ergibt.</li>
+            <li>Syntax:
+                <pre><code>if BEDINGUNG:
+    # tue etwas
+else:
+    # tue etwas anderes</code></pre>
+            </li>
+            <li>Vergleich mit <code>==</code>, nicht mit <code>=</code> (Zuweisung!).</li>
+            <li>Einrückung nach dem <code>:</code> ist zwingend (meist 4 Leerzeichen).</li>
+            <li><code>else</code> ist optional, darf aber nur mit passendem <code>if</code> verwendet werden.</li>
+            <li>Beispiel:
+                <pre><code>passwort = input("Gib dein Passwort ein:")
+if passwort == "ABC123":
+    print("Das Passwort ist korrekt.")
+else:
+    print("Das Passwort ist nicht korrekt.")</code></pre>
+            </li>
+        </ul>
+    </section>
 
 </body>
 
