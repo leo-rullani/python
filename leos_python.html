@@ -300,6 +300,62 @@
     </ul>
 </section>
 
+<section>
+    <h2>15. Operatorrangfolge</h2>
+    <p>Die folgende Tabelle zeigt die Reihenfolge, in der Operatoren in Python ausgewertet werden (von oben nach unten – höchste zu niedrigster Bindung):</p>
+    <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Priorität</th>
+                <th>Operator(en)</th>
+                <th>Beschreibung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><code>**</code></td>
+                <td>Potenz (Exponentiation)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><code>*</code>, <code>/</code>, <code>//</code>, <code>%</code></td>
+                <td>Multiplikation, Division, ganzzahlige Division, Modulo</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><code>+</code>, <code>-</code></td>
+                <td>Addition, Subtraktion</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><code>^</code></td>
+                <td>Bitweises XOR (zählt technisch zu bitweisen Operatoren)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>, <code>&gt;=</code>, <code>&gt;</code></td>
+                <td>Vergleichsoperatoren</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><code>not</code></td>
+                <td>Logische Negation</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><code>and</code></td>
+                <td>Logisches UND</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><code>or</code></td>
+                <td>Logisches ODER (schwächste Bindung)</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Tipp: Wenn du eine andere Reihenfolge erzwingen willst, nutze Klammern <code>()</code>.</p>
+</section>
 
 </body>
 
