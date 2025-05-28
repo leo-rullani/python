@@ -886,8 +886,298 @@ print(list(values))  # echte Liste aller Werte</code></pre>
     <code>.keys()</code> und <code>.values()</code> ggf. mit <code>list()</code> umwandeln.
   </blockquote>
 </section>
+<!-- Funktionen in Python -->
+<section id="funktionen">
+  <h2>🧠 Funktionen in Python – Definition, Aufruf & Rückgabe</h2>
+  <p>Funktionen helfen dir, Code zu strukturieren, wiederverwendbar zu machen und Berechnungen elegant durchzuführen.</p>
 
+  <h3>🔧 Funktionsdefinition</h3>
+  <pre><code>def funktionsname(parameter1, parameter2):
+    # Anweisungen (z. B. Berechnungen, Ausgaben)</code></pre>
+  <ul>
+    <li><code>def</code> – Einleitung der Funktion</li>
+    <li>Einrückung statt geschweifter Klammern</li>
+    <li>Parameter in Klammern (optional)</li>
+  </ul>
 
+  <h3>▶️ Aufruf einer Funktion</h3>
+  <pre><code>def sag_hallo(name):
+    print(f"Hallo {name}")
+
+sag_hallo("Florian")</code></pre>
+
+  <h3>📥 Mehrere Parameter</h3>
+  <pre><code>def sag_hallo(vorname, nachname):
+    print(f"Hallo {vorname} {nachname}")</code></pre>
+
+  <h3>🔄 Rückgabewerte mit <code>return</code></h3>
+  <pre><code>def addieren(a, b):
+    summe = a + b
+    return summe
+
+ergebnis = addieren(10, 32)
+print(f"Summe: {ergebnis}")</code></pre>
+
+  <h3>📌 Wichtige Hinweise</h3>
+  <ul>
+    <li>Rückgabewerte nur per <code>return</code></li>
+    <li>Variablen in Funktionen sind <strong>lokal</strong></li>
+    <li>Leere Funktionen mit <code>pass</code> definieren</li>
+    <li>Einrückung ist <strong>Pflicht</strong> – sie ersetzt <code>{}</code>!</li>
+  </ul>
+
+  <blockquote>
+    Wiederverwendbarer Code = sauberer Code 💡<br>
+    Nutze Funktionen für Berechnungen, Ausgaben & Organisation.
+  </blockquote>
+</section>
+
+<!-- *args und variable Parameter in Python -->
+<section id="args-funktionen">
+  <h2>📦 *args – Beliebig viele Parameter an Funktionen übergeben</h2>
+  <p>
+    Wenn du nicht im Voraus weißt, wie viele Werte an eine Funktion übergeben werden sollen, kannst du mit <code>*args</code> flexibel bleiben.
+  </p>
+
+  <h3>🎯 Standard-Funktionsdefinition</h3>
+  <pre><code>def addieren(a, b):
+    return a + b</code></pre>
+  <p>
+    Problem: Du musst die Anzahl der Parameter <strong>fix vorgeben</strong>.
+  </p>
+
+  <h3>🚀 Lösung mit <code>*args</code></h3>
+  <pre><code>def addieren(*summanden):
+    return sum(summanden)</code></pre>
+
+  <p>
+    Diese Funktion akzeptiert eine <strong>beliebige Anzahl</strong> an Argumenten – sogar keine. Intern wird <code>summanden</code> als <strong>Tuple</strong> gespeichert.
+  </p>
+
+  <h3>🔢 Beispiel-Aufrufe</h3>
+  <pre><code>addieren(1, 2, 3)           # → 6
+addieren(10, 20, 30, 40)    # → 100
+addieren()                  # → 0</code></pre>
+
+  <h3>📌 Kombination mit fixen Parametern</h3>
+  <pre><code>def lotto_spielen(vorname, nachname, *zahlen):
+    print(f"Hallo {vorname} {nachname}")
+    print("Deine Zahlen lauten:", zahlen)</code></pre>
+
+  <p>Beim Aufruf müssen die fixen Parameter <strong>zuerst</strong> kommen:</p>
+  <pre><code>lotto_spielen("Florian", "Deiwick", 4, 8, 15, 16, 23, 42)</code></pre>
+
+  <h3>❌ Fehlerhafte Reihenfolge</h3>
+  <pre><code># FALSCH:
+lotto_spielen(4, 8, 15, 16, 23, 42, "Florian", "Deiwick")</code></pre>
+  <p>
+    → Führt zu einem Fehler, da Python nicht weiß, welche Werte zu den fixen und welche zu den variablen Parametern gehören.
+  </p>
+
+  <h3>🧠 Merksatz</h3>
+  <blockquote>
+    <strong>Immer zuerst die fixen Parameter</strong> (Positional Arguments),<br>
+    danach die variablen Parameter mit <code>*args</code>.
+  </blockquote>
+</section>
+<section id="kwargs">
+  <h2>🧩 **kwargs – Variable Keyword-Argumente</h2>
+  <p>Mit <code>**kwargs</code> kannst du <strong>beliebig viele benannte Argumente</strong> (Schlüssel-Wert-Paare) übergeben. Intern wird <code>kwargs</code> als <em>Dictionary</em> gespeichert.</p>
+
+  <h3>🔧 Definition</h3>
+  <pre><code>def info(**daten):
+    print(daten)</code></pre>
+
+  <h3>📥 Anwendung</h3>
+  <pre><code>info(name="Max", alter=25)
+# Ausgabe: {'name': 'Max', 'alter': 25}</code></pre>
+
+  <h3>🧠 Zugriff mit <code>.get()</code></h3>
+  <pre><code>def info(**daten):
+    name = daten.get("name", "Unbekannt")
+    alter = daten.get("alter", 0)
+    print(f"{name} ist {alter} Jahre alt.")
+
+info(name="Lena")
+# Ausgabe: Lena ist 0 Jahre alt.</code></pre>
+
+  <h3>📌 Eigenschaften</h3>
+  <ul>
+    <li><code>**kwargs</code> erlaubt <strong>benannte Parameter</strong> in beliebiger Anzahl.</li>
+    <li>Reihenfolge ist <strong>egal</strong>.</li>
+    <li><code>.get()</code> schützt vor Fehlern bei fehlenden Schlüsseln.</li>
+  </ul>
+
+  <h3>📎 Standardwerte (Fallback)</h3>
+  <pre><code>daten.get("geschlecht", "nicht angegeben")</code></pre>
+
+  <p>Ideal für <strong>flexible Funktionen</strong>, z. B. Webformulare oder APIs.</p>
+</section>
+<section id="funktionsreihenfolge">
+  <h2>🔄 Aufrufreihenfolge von Parametern in Python-Funktionen</h2>
+
+  <p>In Python muss beim Definieren von Funktionen eine bestimmte <strong>Reihenfolge der Parameter</strong> eingehalten werden, damit der Funktionsaufruf korrekt funktioniert. Diese Reihenfolge ist besonders wichtig bei Kombinationen aus <code>positional arguments</code>, <code>*args</code> und <code>**kwargs</code>.</p>
+
+  <h3>✅ Erlaubte Reihenfolge bei der Funktionsdefinition:</h3>
+  <ol>
+    <li><strong>Positional arguments</strong> (z. B. <code>name</code>, <code>alter</code>)</li>
+    <li><strong><code>*args</code></strong> – für eine <em>beliebige Anzahl an Positionsargumenten</em></li>
+    <li><strong><code>**kwargs</code></strong> – für <em>beliebig viele benannte Argumente</em> (Schlüssel-Wert-Paare)</li>
+  </ol>
+
+  <h3>📌 Beispiel</h3>
+  <pre><code>def daten_erfassen(id, vorname, nachname, *geodaten, **daten):
+    print(f"ID: {id}")
+    print(f"Vorname: {vorname}")
+    print(f"Nachname: {nachname}")
+    print(f"Geodaten: {geodaten}")
+    print(f"Weitere Daten: {daten}")</code></pre>
+
+  <h3>📥 Aufruf</h3>
+  <pre><code>daten_erfassen(
+  42,
+  "Florian",
+  "Daiwig",
+  50.123, 8.678,           # Geodaten (args)
+  email="florian@beispiel.de",
+  beruf="Entwickler"       # keyword-args
+)</code></pre>
+
+  <h3>🛑 Nicht erlaubt!</h3>
+  <p>Folgende Reihenfolge <strong>führt zu einem Fehler</strong>:</p>
+  <pre><code>def falsch(*args, vorname, **kwargs):  # ❌ SyntaxError
+    pass</code></pre>
+
+  <h3>🧠 Merksatz:</h3>
+  <blockquote>
+    Erst <strong>normale Parameter</strong>, dann <code>*args</code>, am Ende <code>**kwargs</code>.
+  </blockquote>
+</section>
+<section id="scoping">
+  <h2>🔍 Scoping in Python</h2>
+  <p>Scoping beschreibt, in welchem Bereich des Codes Variablen sichtbar und nutzbar sind. In Python unterscheidet man zwischen drei Haupt-Gültigkeitsbereichen:</p>
+
+  <h3>1. Built-in Scope</h3>
+  <ul>
+    <li>Enthält alle eingebauten Funktionen und Keywords (z.&nbsp;B. <code>print</code>, <code>len</code>).</li>
+    <li>Immer verfügbar, ohne Import.</li>
+  </ul>
+
+  <h3>2. Global Scope</h3>
+  <ul>
+    <li>Variablen, die außerhalb von Funktionen definiert sind.</li>
+    <li>Sichtbar im gesamten Code derselben Datei.</li>
+    <li>Veränderbar in Funktionen nur mit dem <code>global</code>-Keyword.</li>
+  </ul>
+
+  <h3>3. Local Scope</h3>
+  <ul>
+    <li>Variablen, die innerhalb von Funktionen deklariert werden.</li>
+    <li>Nur innerhalb dieser Funktion sichtbar.</li>
+    <li>Globale Variablen können <strong>nicht</strong> direkt überschrieben werden.</li>
+  </ul>
+
+  <h3>✅ Beispiel mit <code>global</code>:</h3>
+  <pre><code>level = 0
+
+def level_up():
+    global level
+    level += 1
+  </code></pre>
+
+  <p><strong>Merksatz:</strong> Zuerst wird im <em>lokalen Scope</em> gesucht, dann im <em>globalen</em>, zuletzt im <em>built-in Scope</em>.</p>
+</section>
+<section id="modul-import">
+  <h2>📦 Modul entwickeln & einbinden</h2>
+  <p>In Python lassen sich eigene Module leicht erstellen und wiederverwenden. Dazu erstellt man eine Datei, z.&nbsp;B. <code>taschenrechner.py</code>, mit Funktionen wie <code>addieren()</code>, <code>subtrahieren()</code> usw.</p>
+  <p>Diese können dann in einem anderen Script wie <code>main.py</code> über <code>import taschenrechner</code> eingebunden werden. Zugriff auf die Funktionen erfolgt via <code>taschenrechner.addieren(1, 2)</code>.</p>
+  <p>Alternativ kann man per <code>from taschenrechner import *</code> alle Funktionen direkt zugänglich machen. Achtung bei Namenskonflikten!</p>
+  <p>Zur besseren Lesbarkeit empfiehlt sich die Verwendung von Aliasen wie <code>import taschenrechner as tr</code>.</p>
+</section>
+<section id="if-main">
+  <h2>🧠 if <code>__name__ == "__main__"</code> in Python</h2>
+  <p>
+    Diese Kontrollstruktur sorgt dafür, dass bestimmte Codeblöcke nur ausgeführt werden, wenn das Skript <strong>direkt gestartet</strong> wird – nicht beim Import als Modul.
+  </p>
+  <pre><code>if __name__ == "__main__":
+    # Dieser Code wird nur beim Direktstart ausgeführt
+    main()</code></pre>
+  <h3>Vorteile:</h3>
+  <ul>
+    <li>Verhindert unerwünschte Ausführung beim Modulimport</li>
+    <li>Ermöglicht Testläufe innerhalb von Modulen</li>
+    <li>Fördert saubere, modulare Programmstruktur</li>
+  </ul>
+  <h3>Beispiel:</h3>
+  <pre><code># taschenrechner.py
+def addiere(a, b):
+    return a + b
+
+if __name__ == "__main__":
+    print(addiere(1, 2))</code></pre>
+</section>
+<section id="input-function">
+  <h2>📥 input()-Funktion in Python</h2>
+  <p>Mit <code>input()</code> lassen sich Benutzereingaben zur Laufzeit abfragen. Die Funktion gibt immer einen <strong>String</strong> zurück.</p>
+  
+  <h3>🔹 Syntax</h3>
+  <pre><code>eingabe = input("Bitte gib deinen Namen ein: ")</code></pre>
+
+  <h3>🔹 Typumwandlung für Berechnungen</h3>
+  <pre><code>geburtsjahr = int(input("In welchem Jahr wurdest du geboren?\n"))
+alter = 2023 - geburtsjahr</code></pre>
+  <p>Da <code>input()</code> immer einen String liefert, muss eine Umwandlung z. B. mit <code>int()</code> erfolgen.</p>
+
+  <h3>🔹 Fehleranfälligkeit</h3>
+  <p>Gibt der Benutzer z. B. einen Text statt einer Zahl ein, entsteht ein <code>ValueError</code>. Beispiel:</p>
+  <pre><code>ValueError: invalid literal for int() with base 10: 'Florian'</code></pre>
+
+  <h3>🔹 Input als Blockierer</h3>
+  <pre><code>input("Drücke Enter, um das Programm zu beenden.")</code></pre>
+  <p>Die Ausführung pausiert, bis eine Eingabe erfolgt – nützlich bei Konsolenfenstern.</p>
+
+  <h3>🔹 Gestaltungs-Tipps</h3>
+  <ul>
+    <li>Nutze <code>\n</code> für Zeilenumbrüche.</li>
+    <li>Füge ein Leerzeichen ans Ende der Eingabeaufforderung hinzu, damit der Cursor richtig steht.</li>
+  </ul>
+
+  <h3>🔹 Beispiel: Altersberechnung</h3>
+  <pre><code>jahr = int(input("In welchem Jahr wurdest du geboren?\n"))
+alter = 2023 - jahr
+print(f"Du bist {alter} Jahre alt.")</code></pre>
+</section>
+<section id="exec">
+  <h2>⚠️ Die <code>exec()</code>-Funktion in Python</h2>
+
+  <h3>🔍 Was ist <code>exec()</code>?</h3>
+  <p>
+    Die Funktion <code>exec()</code> führt Python-Code aus, der als <strong>String</strong> übergeben wird. Sie ist Teil der Standardbibliothek und erfordert keinen Import.
+  </p>
+  <pre><code>exec("print('Hallo Welt')")</code></pre>
+
+  <h3>⚠️ Sicherheitsrisiken</h3>
+  <ul>
+    <li><strong>Ungeprüfte Benutzereingaben</strong> können beliebigen Code ausführen.</li>
+    <li><strong>Verschleierter Code</strong> (z. B. Base64) kann Schadcode enthalten.</li>
+    <li><strong>Keine Einschränkungen:</strong> Alles im String wird vollständig ausgeführt.</li>
+  </ul>
+
+  <h3>🔧 Beispiel mit Base64-codiertem Code</h3>
+  <pre><code>import base64
+
+code_encoded = "cHJpbnQoIkhlbGxvIFdvcmxkIik="
+decoded = base64.b64decode(code_encoded).decode("utf-8")
+exec(decoded)  # Führt: print("Hello World") aus</code></pre>
+
+  <h3>🛡️ Empfehlungen</h3>
+  <ul>
+    <li><strong>Vermeide <code>exec()</code></strong>, wenn es nicht zwingend nötig ist.</li>
+    <li><strong>Nutze Alternativen</strong> wie Funktionen oder sichere <code>eval()</code>-Ausdrücke.</li>
+    <li><strong>Filtere Benutzereingaben</strong> (z. B. über Whitelisting).</li>
+    <li><strong>Analysiere codierten Code</strong> (z. B. Base64) vor der Ausführung.</li>
+  </ul>
+</section>
 
 </body>
 
