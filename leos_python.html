@@ -631,6 +631,85 @@ print("Teilnehmerliste:", teilnehmerliste)</code></pre>
     <li>Out-of-Range bei direktem Indexzugriff (<code>liste[99]</code>) führt zu <code>IndexError</code>.</li>
   </ul>
 </section>
+<section>
+  <h2>Kapitel 17 – Listenmethoden</h2>
+  <p>Listen sind dynamische Datenstrukturen in Python, die Elemente verschiedenster Typen aufnehmen können. Sie bieten eine Vielzahl an Methoden zur Bearbeitung.</p>
+
+  <h3>Elemente hinzufügen</h3>
+  <ul>
+    <li><code>+</code> zum Verketten von Listen</li>
+    <li><code>*</code> zur Wiederholung von Listen</li>
+    <li><code>.append(wert)</code> – Hängt ein einzelnes Element an</li>
+    <li><code>.insert(index, wert)</code> – Fügt ein Element an gegebener Position ein</li>
+  </ul>
+
+  <h3>Elemente entfernen</h3>
+  <ul>
+    <li><code>.remove(wert)</code> – Entfernt das erste Vorkommen</li>
+    <li><code>.clear()</code> – Leert die gesamte Liste</li>
+  </ul>
+
+  <h3>Weitere Methoden</h3>
+  <ul>
+    <li><code>.count(wert)</code> – Zählt, wie oft ein Wert vorkommt</li>
+    <li><code>.sort()</code> – Sortiert die Liste (optional: <code>reverse=True</code>)</li>
+    <li><code>.copy()</code> – Erstellt eine echte Kopie</li>
+    <li><code>.index(wert)</code> – Gibt die erste Indexposition eines Werts zurück</li>
+    <li><code>w in liste</code> – Prüft, ob <code>w</code> enthalten ist</li>
+  </ul>
+
+  <h3>String-Methode <code>.join()</code></h3>
+  <p>Wird auf einen String angewendet und verbindet die Elemente einer String-Liste:</p>
+  <pre><code>'-'.join(["A", "B", "C"])  # "A-B-C"</code></pre>
+</section>
+<!-- Tupel in Python -->
+<section id="tupel-python">
+  <h2>📘 Tupel in Python</h2>
+  <p>Tupel sind eine unveränderliche Datenstruktur in Python, ähnlich wie Listen, aber starr.</p>
+
+  <h3>🧩 Eigenschaften</h3>
+  <ul>
+    <li>Unveränderlich: keine Elemente hinzufügen, löschen oder ändern</li>
+    <li>Festgelegte Länge und Reihenfolge</li>
+    <li>Ideal für konstante Werte wie Koordinaten oder Funktionsrückgaben</li>
+  </ul>
+
+  <h3>🧪 Syntax</h3>
+  <pre><code>mein_tupel = (1, 2, 3)
+leeres_tupel = ()
+</code></pre>
+
+  <h3>📏 Länge bestimmen</h3>
+  <pre><code>len((1, 2, 3))  # → 3</code></pre>
+
+  <h3>🎯 Zugriff auf Elemente</h3>
+  <pre><code>t = (4, 5, 29, 7)
+t[2]    # → 29
+t[-2]   # → 29 (von hinten)</code></pre>
+
+  <h3>🔁 Direktzugriff ohne Variable</h3>
+  <pre><code>print((4, 5, 29, 7)[-2])  # → 29</code></pre>
+
+  <h3>⚙️ Tupel als Rückgabe von Funktionen</h3>
+  <pre><code>def addieren(a, b):
+    return a, b, a + b
+
+ergebnis = addieren(1, 4)
+print(ergebnis)        # → (1, 4, 5)
+print(type(ergebnis))  # → &lt;class 'tuple'&gt;</code></pre>
+
+  <h3>🧠 *args → automatisch Tupel</h3>
+  <pre><code>def addieren(*summanden):
+    print(type(summanden))  # → &lt;class 'tuple'&gt;
+    return sum(summanden)
+
+addieren(1, 2, 3)  # → 6</code></pre>
+
+  <h3>📌 Merksatz</h3>
+  <blockquote>
+    Tupel = Liste, die man nicht verändern darf.
+  </blockquote>
+</section>
 
 
 </body>
