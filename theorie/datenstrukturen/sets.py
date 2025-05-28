@@ -1,0 +1,3 @@
+set()                                                               # Ausgabe: leeres Set
+print({12, 12, 12, 12, 41, 17, 13, 45, 9, "Leo", True})             # Ausgabe: 12 nur 1x, nicht inselber Reihenfolge, willkürlich, Elemente könnten auch nicht mit [Indizes herausgelesen werden > TypeError 'set' object is not subscriptable]
+print(len({12, 12, 12, 12, 41, 17, 13, 45, 9, "Leo", True}))        # Ausgabe: 8, 12 nur 1x gezählt

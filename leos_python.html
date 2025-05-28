@@ -710,7 +710,92 @@ addieren(1, 2, 3)  # → 6</code></pre>
     Tupel = Liste, die man nicht verändern darf.
   </blockquote>
 </section>
+<!-- Tupel: Methoden, Kopieren und Umwandeln -->
+<section id="tupel-methoden">
+  <h2>📘 Tupel: Methoden, Kopieren & Umwandeln</h2>
+  <p>Tupel sind unveränderliche Datenstrukturen in Python – das bedeutet, dass viele Methoden, die Listen verändern, hier nicht funktionieren.</p>
 
+  <h3>🔒 Keine Änderungsmethoden</h3>
+  <ul>
+    <li>Keine <code>append()</code>, <code>remove()</code> etc.</li>
+    <li>Keine direkte Veränderung des Tupels möglich</li>
+  </ul>
+
+  <h3>➕ Tupel kombinieren</h3>
+  <pre><code>t1 = (1, 2, 3)
+t2 = (4, 5)
+neu = t1 + t2  # → (1, 2, 3, 4, 5)</code></pre>
+
+  <h3>🔍 Lesende Methoden</h3>
+  <ul>
+    <li><code>count()</code> – zählt, wie oft ein Element vorkommt</li>
+    <li><code>index()</code> – gibt die Position des ersten Vorkommens zurück</li>
+  </ul>
+  <pre><code>t = (7, 1, 7, 2)
+t.count(7)     # → 2
+t.index(1)     # → 1</code></pre>
+
+  <h3>🧪 Kopieren</h3>
+  <ul>
+    <li>Zuweisung <code>kopie = original</code> erzeugt einen Verweis</li>
+    <li>Kein Problem, da Tupel unveränderbar sind</li>
+  </ul>
+
+  <h3>🔄 Sortieren durch Umwandlung</h3>
+  <pre><code>t = (5, 2, 8, 1)
+liste = list(t)
+liste.sort()
+print(liste)  # → [1, 2, 5, 8]</code></pre>
+
+  <h3>📌 Merksätze</h3>
+  <blockquote>
+    Tupel erlauben nur lesende Methoden. <br>
+    Für Sortierung: zuerst in Liste umwandeln!
+  </blockquote>
+</section>
+<!-- Set-Methoden in Python -->
+<section id="set-methoden">
+  <h2>📘 Set-Methoden in Python</h2>
+  <p>Sets sind Mengen ohne Duplikate und ohne feste Reihenfolge. Daher gibt es einige Methoden nicht, aber andere, die gut zu dieser Datenstruktur passen.</p>
+
+  <h3>❌ Nicht vorhandene Methoden</h3>
+  <ul>
+    <li><code>count()</code> – nicht verfügbar, da keine Duplikate erlaubt sind</li>
+    <li><code>index()</code> – nicht verfügbar, da Sets keine Reihenfolge haben</li>
+  </ul>
+
+  <h3>✅ Existierende Methoden & Operationen</h3>
+
+  <h4>🔍 Vorhandensein prüfen</h4>
+  <pre><code>5 in s  # → True
+99 in s # → False</code></pre>
+
+  <h4>➕ Hinzufügen: <code>add()</code></h4>
+  <pre><code>s = {1, 2}
+s.add(3)  # → {1, 2, 3}</code></pre>
+
+  <h4>➖ Entfernen: <code>remove()</code></h4>
+  <pre><code>s = {3, 5, 8}
+s.remove(8)  # → {3, 5}</code></pre>
+
+  <h4>🧹 Alles löschen: <code>clear()</code></h4>
+  <pre><code>s.clear()  # → set()</code></pre>
+
+  <h4>📋 Kopieren: <code>copy()</code></h4>
+  <pre><code>kopie = original.copy()</code></pre>
+
+  <h3>🔄 Sortieren (indirekt)</h3>
+  <pre><code>s = {11, 2, 7}
+liste = list(s)
+liste.sort()
+print(liste)  # → [2, 7, 11]</code></pre>
+
+  <h3>📌 Merksatz</h3>
+  <blockquote>
+    Sets sind ungeordnet und einzigartig. <br>
+    Für Sortierung → zuerst in eine Liste umwandeln.
+  </blockquote>
+</section>
 
 </body>
 
