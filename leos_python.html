@@ -595,6 +595,43 @@ while True:
 
   <p>💡 <strong>Fazit:</strong> Verwende <code>for</code>, wenn die Anzahl der Durchläufe bekannt ist (z.&nbsp;B. Liste, String, range), und <code>while</code>, wenn du flexibel auf Bedingungen oder Benutzereingaben reagieren musst.</p>
 </section>
+<section>
+  <h2>15. Walross-Operator <code>:=</code></h2>
+  <p>
+    Seit Python 3.8 gibt es den sogenannten <strong>Walross-Operator</strong> <code>:=</code> (auch „<em>assignment expression</em>“ genannt).
+    Er erlaubt, einer Variablen innerhalb einer Bedingung <em>einen Wert zuzuweisen und diesen gleichzeitig zu prüfen</em> – ideal für kompakte, lesbare Schleifen.
+  </p>
+
+  <h3>📚 Beispiel: Teilnehmerliste mit <code>while</code>-Schleife</h3>
+  <pre><code>teilnehmerliste = []
+
+while (teilnehmer := input("Gib einen Teilnehmer ein: ")) != "x":
+    teilnehmerliste.append(teilnehmer)
+
+print("Teilnehmerliste:", teilnehmerliste)</code></pre>
+
+  <h3>🧠 Vorteile:</h3>
+  <ul>
+    <li>Vermeidet doppelte Codezeilen wie <code>input(...)</code> vor und in der Schleife.</li>
+    <li>Erhöht die Lesbarkeit & reduziert Fehler durch Copy-Paste.</li>
+    <li>Perfekt für kompakte while-Bedingungen mit Zuweisung.</li>
+  </ul>
+
+  <p>💡 Merkhilfe: Der Operator <code>:=</code> sieht aus wie das Gesicht eines 🦭 Walrosses – daher der Name.</p>
+</section>
+<section>
+  <h2>16. Listen in Python</h2>
+  <ul>
+    <li>Listen sind <strong>flexibel</strong> und <strong>dynamisch</strong>: Sie können verschiedene Datentypen enthalten (z. B. <code>int</code>, <code>str</code>, <code>bool</code>).</li>
+    <li>Erstellung: <code>liste = []</code> (leere Liste) oder z. B. <code>liste = [42, "Florian", True]</code></li>
+    <li>Länge ermitteln mit <code>len(liste)</code></li>
+    <li>Zugriff über Index: <code>liste[0]</code>, <code>liste[-1]</code> (letztes Element)</li>
+    <li><strong>Slicing</strong>: <code>liste[1:4]</code> – liefert eine Teilliste (Start inkl., Ende exkl.)</li>
+    <li>Out-of-Range beim <strong>Slicing</strong> ist erlaubt → kein Fehler.</li>
+    <li>Out-of-Range bei direktem Indexzugriff (<code>liste[99]</code>) führt zu <code>IndexError</code>.</li>
+  </ul>
+</section>
+
 
 </body>
 
