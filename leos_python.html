@@ -796,6 +796,98 @@ print(liste)  # → [2, 7, 11]</code></pre>
     Für Sortierung → zuerst in eine Liste umwandeln.
   </blockquote>
 </section>
+<!-- Dictionaries in Python -->
+<section id="dictionaries">
+  <h2>📘 Dictionaries in Python – Einführung & Zugriff</h2>
+  <p>Ein Dictionary ist eine Sammlung von Schlüssel-Wert-Paaren – vergleichbar mit einem Telefonbuch oder einem echten Wörterbuch.</p>
+
+  <h3>🧩 Aufbau & Syntax</h3>
+  <pre><code>{
+  "Yunus": "01234",
+  "Florian": "09876"
+}</code></pre>
+  <ul>
+    <li><code>{}</code> → leeres Dictionary</li>
+    <li>Schlüssel und Werte werden mit <code>:</code> verbunden</li>
+    <li>Mehrere Paare werden mit <code>,</code> getrennt</li>
+  </ul>
+
+  <h3>🔍 Zugriff auf Werte</h3>
+  <pre><code>telefonbuch.get("Yunus")      # → "01234"
+telefonbuch["Yunus"]          # → "01234"
+telefonbuch.get("Unbekannt")  # → None
+telefonbuch["Unbekannt"]      # → KeyError!</code></pre>
+  <p><strong>Tipp:</strong> Immer <code>get()</code> verwenden, wenn du nicht sicher bist, ob der Schlüssel existiert.</p>
+
+  <h3>🔄 Werte & Typen</h3>
+  <ul>
+    <li>Werte können <code>str</code>, <code>int</code>, <code>list</code> oder andere Objekte sein</li>
+    <li>Beispiel: <code>{"Yunus": [0,1,2,3]}</code></li>
+  </ul>
+
+  <h3>🔐 Erlaubte Schlüsseltypen</h3>
+  <ul>
+    <li><strong>Erlaubt:</strong> <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code></li>
+    <li><strong>Verboten:</strong> <code>list</code>, <code>set</code>, <code>dict</code> (nicht hashbar)</li>
+  </ul>
+
+  <h3>📏 Länge ermitteln</h3>
+  <pre><code>len(telefonbuch)  # → Anzahl der Einträge</code></pre>
+
+  <h3>📌 Merksatz</h3>
+  <blockquote>
+    Dictionaries sind Schlüssel-Wert-Speicher. <br>
+    Immer <code>get()</code> nutzen, wenn du Fehler vermeiden willst.
+  </blockquote>
+</section>
+<!-- Dictionaries: Zugriff, Update, Löschen & Methoden -->
+<section id="dictionaries-methoden">
+  <h2>📘 Dictionaries – Zugriff, Update, Löschen & Methoden</h2>
+  <p>Ein Dictionary speichert Schlüssel-Wert-Paare und bietet zahlreiche Methoden für sicheren Zugriff und Bearbeitung.</p>
+
+  <h3>🔍 Zugriff auf Werte</h3>
+  <ul>
+    <li><code>dict["key"]</code> → direkter Zugriff (Achtung: <code>KeyError</code> möglich)</li>
+    <li><code>dict.get("key")</code> → sicherer Zugriff, gibt <code>None</code> oder optionalen Default zurück</li>
+  </ul>
+  <pre><code>pw.get("abc123")               # → Wert
+pw.get("ultrageheim")         # → None
+pw.get("ultrageheim", "...")  # → "...", falls nicht vorhanden</code></pre>
+
+  <h3>🛠 Werte aktualisieren</h3>
+  <ul>
+    <li><code>dict["key"] = neuer_wert</code> – aktualisiert oder fügt neu hinzu</li>
+    <li><code>dict.update({"key": neuer_wert})</code> – empfohlene Methode</li>
+  </ul>
+
+  <h3>➖ Einträge löschen</h3>
+  <ul>
+    <li><code>del dict["key"]</code> – entfernt Schlüssel + Wert</li>
+    <li><code>dict.clear()</code> – entfernt alle Einträge</li>
+  </ul>
+
+  <h3>📋 Dictionary kopieren</h3>
+  <pre><code>kopie = original.copy()</code></pre>
+  <p>⚠️ Nicht nur <code>=</code> verwenden, da das nur eine Referenz erzeugt!</p>
+
+  <h3>🔑 Schlüssel & 🔓 Werte abrufen</h3>
+  <pre><code>keys = dict.keys()
+print(list(keys))  # echte Liste aller Schlüssel
+
+values = dict.values()
+print(list(values))  # echte Liste aller Werte</code></pre>
+
+  <p>Beachte: <code>.keys()</code> & <code>.values()</code> liefern spezielle Objekte wie <code>dict_keys</code>, die per <code>list()</code> umgewandelt werden können.</p>
+
+  <h3>📌 Merksätze</h3>
+  <blockquote>
+    Immer <code>.get()</code> statt <code>[]</code> bei unsicherem Zugriff verwenden.<br>
+    <code>.update()</code> zum sicheren Ändern.<br>
+    <code>.keys()</code> und <code>.values()</code> ggf. mit <code>list()</code> umwandeln.
+  </blockquote>
+</section>
+
+
 
 </body>
 
