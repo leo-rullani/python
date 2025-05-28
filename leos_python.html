@@ -389,6 +389,63 @@ else:
             </li>
         </ul>
     </section>
+    <section>
+    <h2>12. Mehrfache Bedingungen mit <code>elif</code></h2>
+    <ul>
+        <li><code>elif</code> steht für „else if“ – wird geprüft, wenn die <code>if</code>-Bedingung nicht zutrifft.</li>
+        <li><code>else</code> fängt alle übrigen Fälle auf, wenn keine vorherige Bedingung zutrifft.</li>
+        <li>Nur der erste passende Block wird ausgeführt – danach wird der Rest ignoriert.</li>
+        <li>Syntax:
+            <pre><code>if BEDINGUNG:
+    ANWEISUNG
+elif ANDERE_BEDINGUNG:
+    ANWEISUNG
+else:
+    ANWEISUNG</code></pre>
+        </li>
+        <li>Beispiel:
+            <pre><code>note = input("Gib die Schulnote ein (1–6): ")
+
+if note == "1":
+    print("Sehr gut!")
+elif note == "2":
+    print("Gut")
+elif note == "3":
+    print("Befriedigend")
+elif note == "4":
+    print("Ausreichend")
+elif note == "5":
+    print("Mangelhaft")
+elif note == "6":
+    print("Ungenügend")
+else:
+    print("Ungültige Eingabe")</code></pre>
+        </li>
+        <li>Tipp: Für numerische Eingaben <code>int()</code> verwenden:
+            <pre><code>note = int(input("Gib die Schulnote als Zahl ein: "))</code></pre>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>10. Match-Case (ab Python 3.10)</h2>
+    <ul>
+        <li><code>match</code> prüft den Wert einer Variable gegen mehrere <code>case</code>-Fälle.</li>
+        <li>Ähnlich wie <code>switch-case</code> in anderen Sprachen, aber leistungsfähiger.</li>
+        <li><code>case _</code> entspricht einem <code>else</code>-Zweig – wird ausgeführt, wenn kein anderer <code>case</code> passt.</li>
+        <li>Beispiel mit Strings:
+            <pre><code>match note:
+    case "1":
+        print("Sehr gut!")
+    case "2":
+        print("Gut")
+    case _:
+        print("Ungültige Eingabe.")</code></pre>
+        </li>
+        <li>Auch mit <code>int</code> möglich – z. B. <code>match int(note):</code></li>
+        <li>Erweiterbar auf Listen, Tupel oder eigene Objekte (Pattern Matching).</li>
+    </ul>
+</section>
 
 </body>
 
