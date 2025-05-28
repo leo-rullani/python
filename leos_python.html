@@ -447,6 +447,155 @@ else:
     </ul>
 </section>
 
+<section>
+    <h2>11. While-Schleifen</h2>
+    <ul>
+        <li>Wiederholen Codeblöcke, solange eine Bedingung <code>True</code> ergibt.</li>
+        <li><strong>Syntax:</strong><br>
+            <code>while BEDINGUNG:</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>ANWEISUNG</code>
+        </li>
+        <li>Bedingung muss zu einem booleschen Wert (<code>True</code> / <code>False</code>) evaluiert werden.</li>
+        <li>Wird die Bedingung <code>False</code>, endet die Schleife.</li>
+        <li>Beispiel:
+            <pre><code>x = 5
+runde = 1
+while x > 0:
+    print(f"Runde {runde}")
+    runde += 1
+    x -= 1</code></pre>
+        </li>
+        <li><strong>Nutzereingaben mit while:</strong><br>
+            <pre><code>namen = []
+name = input("Name eingeben (X zum Beenden): ")
+while name != "X":
+    namen.append(name)
+    print(namen)
+    name = input("Name eingeben (X zum Beenden): ")</code></pre>
+        </li>
+        <li>Achte darauf, dass die Bedingung irgendwann <code>False</code> wird – sonst entsteht eine Endlosschleife.</li>
+    </ul>
+</section>
+<section>
+    <h2>11. While-Schleifen</h2>
+    <ul>
+        <li>Wiederholen Codeblöcke, solange eine Bedingung <code>True</code> ergibt.</li>
+        <li><strong>Syntax:</strong><br>
+            <code>while BEDINGUNG:</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>ANWEISUNG</code>
+        </li>
+        <li>Bedingung muss zu einem booleschen Wert (<code>True</code> / <code>False</code>) evaluiert werden.</li>
+        <li>Wird die Bedingung <code>False</code>, endet die Schleife.</li>
+        <li>Beispiel:
+            <pre><code>x = 5
+runde = 1
+while x > 0:
+    print(f"Runde {runde}")
+    runde += 1
+    x -= 1</code></pre>
+        </li>
+        <li><strong>Nutzereingaben mit while:</strong><br>
+            <pre><code>namen = []
+name = input("Name eingeben (X zum Beenden): ")
+while name != "X":
+    namen.append(name)
+    print(namen)
+    name = input("Name eingeben (X zum Beenden): ")</code></pre>
+        </li>
+        <li>Achte darauf, dass die Bedingung irgendwann <code>False</code> wird – sonst entsteht eine Endlosschleife.</li>
+    </ul>
+</section>
+<section>
+    <h2>12. For-Schleifen</h2>
+    <ul>
+        <li>Eine <code>for</code>-Schleife wird verwendet, um eine definierte Anzahl an Durchläufen über eine Datenstruktur (z. B. Liste, Tupel, <code>range()</code>) durchzuführen.</li>
+        <li><code>for element in iterable:</code> → Jeder Eintrag wird nacheinander der Variablen zugewiesen.</li>
+        <li>Beispiel:
+            <pre><code>passwoerter = ["abc123", "geheim", "test", "123456"]
+for passwort in passwoerter:
+    print(passwort)</code></pre>
+        </li>
+        <li><code>break</code> bricht die Schleife vorzeitig ab, z. B. bei einer Abbruchbedingung:
+            <pre><code>if len(passwort) &lt; 5:
+    break</code></pre>
+        </li>
+        <li>Funktioniert mit Listen, Tupeln, Sets, Dictionaries, Strings & <code>range()</code>.</li>
+        <li>Besonders leserlich durch Python's iterator-basierten Ansatz.</li>
+    </ul>
+</section>
+<section>
+    <h2>13. Endlosschleifen</h2>
+    <p>Endlosschleifen entstehen, wenn eine <code>while</code>-Schleife nie endet, weil ihre Bedingung dauerhaft <code>True</code> bleibt.</p>
+    <p>Beispiel einer fehlerhaften <code>while</code>-Schleife:</p>
+    <pre><code>teilnehmer = input("Teilnehmer eingeben: ")
+teilnehmer_liste = []
+
+while teilnehmer != "X":
+    teilnehmer_liste.append(teilnehmer)
+    print(teilnehmer_liste)
+    # Eingabe fehlt hier → Endlosschleife</code></pre>
+    <p><strong>Richtig:</strong> Eingabe innerhalb der Schleife erneut abfragen:</p>
+    <pre><code>teilnehmer_liste = []
+teilnehmer = input("Teilnehmer eingeben (X zum Beenden): ")
+
+while teilnehmer != "X":
+    teilnehmer_liste.append(teilnehmer)
+    print(teilnehmer_liste)
+    teilnehmer = input("Nächster Teilnehmer (X zum Beenden): ")</code></pre>
+    <p>Alternativ mit <code>while True</code> und <code>break</code> absichern:</p>
+    <pre><code>i = 0
+while True:
+    if i == 3:
+        break
+    print("Durchlauf", i)
+    i += 1</code></pre>
+    <p>💡 Achte darauf, dass sich die Bedingung in der Schleife irgendwann ändert – sonst läuft sie unendlich weiter.</p>
+</section>
+
+<section>
+  <h2>14. Unterschied: for vs. while</h2>
+  <p>🔁 Python kennt zwei Haupt-Schleifentypen:</p>
+  <ul>
+    <li><strong><code>for</code>-Schleife:</strong> Wiederholt einen Codeblock <em>eine festgelegte Anzahl an Malen</em> – typischerweise über Datenstrukturen wie Listen, Tupel oder Strings.</li>
+    <li><strong><code>while</code>-Schleife:</strong> Wiederholt den Codeblock <em>solange eine Bedingung wahr ist</em> – die Laufzeit ist also abhängig von Benutzeraktionen oder Programmlogik.</li>
+  </ul>
+
+  <h3>🧠 Vergleich</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Eigenschaft</th>
+        <th><code>for</code>-Schleife</th>
+        <th><code>while</code>-Schleife</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>⏳ Laufzeit</td>
+        <td>Vordefiniert (z.&nbsp;B. durch Länge einer Liste)</td>
+        <td>Abhängig von einer Bedingung</td>
+      </tr>
+      <tr>
+        <td>📦 Typischer Einsatz</td>
+        <td>Datenstrukturen durchlaufen</td>
+        <td>Benutzereingaben, Event Loops, Server-Überwachung</td>
+      </tr>
+      <tr>
+        <td>❌ Endlosschleifen möglich?</td>
+        <td>Nein (endet automatisch nach X Durchläufen)</td>
+        <td>Ja (z.&nbsp;B. durch <code>while True</code>)</td>
+      </tr>
+      <tr>
+        <td>🔧 Benutzerabbruch</td>
+        <td>Nur mit <code>break</code> bei zusätzlicher Prüfung</td>
+        <td>Einfach durch Eingabebedingung steuerbar</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>💡 <strong>Fazit:</strong> Verwende <code>for</code>, wenn die Anzahl der Durchläufe bekannt ist (z.&nbsp;B. Liste, String, range), und <code>while</code>, wenn du flexibel auf Bedingungen oder Benutzereingaben reagieren musst.</p>
+</section>
+
 </body>
 
 </html>
