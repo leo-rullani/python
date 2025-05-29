@@ -1178,7 +1178,146 @@ exec(decoded)  # Führt: print("Hello World") aus</code></pre>
     <li><strong>Analysiere codierten Code</strong> (z. B. Base64) vor der Ausführung.</li>
   </ul>
 </section>
+<section>
+    <h2>17. Objektorientierte Programmierung (OOP) in Python</h2>
+    <ul>
+        <li><strong>Klasse</strong> als Vorlage zur Strukturierung von Code – mit Eigenschaften und Methoden.</li>
+        <li><code>__init__()</code>: Konstruktor zur Initialisierung von Objekt-Eigenschaften (z. B. <code>self.name</code>).</li>
+        <li><strong>Objekt</strong>: Konkrete Instanz einer Klasse – z. B. <code>dog1 = Hund("braun", "Schäferhund", "Fritzi")</code>.</li>
+        <li><code>self</code>: Verweis auf das aktuelle Objekt innerhalb der Klasse.</li>
+        <li><strong>Methoden</strong>: Funktionen innerhalb einer Klasse, z. B. <code>def bellen(self):</code>.</li>
+        <li><strong>Vererbung</strong>: Gemeinsame Funktionen und Eigenschaften in einer Oberklasse bündeln.</li>
+        <li>Beispiel:
+            <pre><code>class Hund(Saeugetier):
+    def bellen(self):
+        print("Wuff!")</code></pre>
+        </li>
+        <li>OOP fördert sauberen, wartbaren und wiederverwendbaren Code.</li>
+    </ul>
+</section>
+<section>
+    <h2>17. Objektorientierte Programmierung mit Python – Pokémon</h2>
+    <h3>Teil 1: Klassen, Attribute und Methoden</h3>
+    <ul>
+        <li>Mit dem Schlüsselwort <code>class</code> wird eine Klasse definiert (z. B. <code>class Pokemon:</code>).</li>
+        <li>Die Methode <code>__init__(self, name, level)</code> ist der sogenannte Konstruktor – sie wird beim Erzeugen (Instanziieren) eines Objekts automatisch aufgerufen.</li>
+        <li>Innerhalb von <code>__init__</code> werden Objektvariablen definiert, z. B.:
+            <code>self.__name = name</code>, <code>self.__level = level</code>, <code>self.__lebenspunkte = 42</code>.
+        </li>
+        <li><strong>Objektmethoden</strong> wie <code>vorstellen(self)</code> geben Informationen über das Pokémon aus.</li>
+        <li>Die Attribute werden mit <code>self.</code> angesprochen und bleiben dank <code>__</code> geschützt.</li>
+        <li>Instanziierung erfolgt durch <code>p1 = Pokemon("Bisasam", 0)</code>.</li>
+        <li>Methode <code>get_level()</code> gibt das Level zurück – Zugriff auf geschützte Variablen via Getter-Methoden.</li>
+    </ul>
 
+    <h3>Teil 2: Interaktion und Angriffe</h3>
+    <ul>
+        <li>Neue Methode <code>zeige_level(self)</code> zeigt den Namen + Level kombiniert an.</li>
+        <li><code>entwickeln(self)</code> erhöht das Level des Pokémon um 1.</li>
+        <li>Ein Angriff wird mit <code>attackieren(self, other, schaden)</code> umgesetzt.</li>
+        <li>Der Parameter <code>other</code> steht für das Pokémon, das angegriffen wird.</li>
+        <li>Beispiel:
+            <pre><code>p1.attackieren(p2, 10)</code></pre>
+            zieht dem Pokémon <code>p2</code> 10 Lebenspunkte ab.
+        </li>
+        <li>Die Methode <code>zeige_lebenspunkte()</code> gibt aktuelle HP aus.</li>
+        <li>Da der Zugriff innerhalb derselben Klasse erfolgt, kann auch auf <code>__lebenspunkte</code> von <code>other</code> zugegriffen werden.</li>
+        <li>Ein vollständiger Ablauf: Pokémon werden instanziiert, entwickelt, und greifen sich gegenseitig an – und das alles auf Basis von Python OOP.</li>
+    </ul>
+</section>
+<section>
+  <h2>18. Magische Methoden in Python – Pokémon</h2>
+
+  <h3>Teil 1: <code>__str__()</code> – Menschlich lesbare Ausgabe</h3>
+  <ul>
+    <li>Magische Methoden beginnen und enden mit doppelten Unterstrichen (z. B. <code>__str__</code>).</li>
+    <li><code>__str__(self)</code> wird aufgerufen, wenn ein Objekt z. B. mit <code>print(obj)</code> ausgegeben wird.</li>
+    <li>Beispiel-Implementierung für Pokémon:
+      <pre><code>def __str__(self):
+    return f"Name: {self.__name}\nLebenspunkte: {self.__lebenspunkte}\nLevel: {self.__level}"</code></pre>
+    </li>
+    <li>Ergebnis: Menschlich lesbare Darstellung wie:
+      <pre>Name: Pikachu
+Lebenspunkte: 42
+Level: 2</pre>
+    </li>
+  </ul>
+
+  <h3>Teil 2: <code>__gt__()</code> – Vergleichsoperator &gt;</h3>
+  <ul>
+    <li><code>__gt__(self, other)</code> vergleicht zwei Objekte mit dem Größer-als-Zeichen.</li>
+    <li>Vergleich erfolgt z. B. anhand des Levels:
+      <pre><code>def __gt__(self, other):
+    return self.__level > other.__level</code></pre>
+    </li>
+    <li>Verwendung im Hauptprogramm: <code>if p1 &gt; p2:</code> prüft, ob <code>p1</code> ein höheres Level hat als <code>p2</code>.</li>
+    <li>Ausgabe ist <code>True</code> oder <code>False</code> je nach Vergleich.</li>
+  </ul>
+
+  <h3>Weitere wichtige magische Methoden:</h3>
+  <ul>
+    <li><code>__add__</code> → für <code>+</code> Operator</li>
+    <li><code>__sub__</code> → für <code>-</code> Operator</li>
+    <li><code>__mul__</code> → für <code>*</code> Operator</li>
+    <li><code>__eq__</code> → für <code>==</code> Gleichheit</li>
+    <li><code>__lt__</code> → für <code>&lt;</code> Kleiner-als</li>
+  </ul>
+
+  <p>🔁 Durch magische Methoden wird Python-Code intuitiver und klarer lesbar – besonders bei Klassen wie Pokémon!</p>
+</section>
+<section>
+    <h2>18. Fehlerbehandlung mit <code>try</code> und <code>except</code></h2>
+    <ul>
+        <li>Mit <code>try</code> wird ein Codeblock getestet, der zu Fehlern führen kann.</li>
+        <li>Mit <code>except</code> werden bestimmte Fehler (z. B. <code>IndexError</code>, <code>ValueError</code>) gezielt abgefangen.</li>
+        <li>Syntax:
+            <pre><code>try:
+    # kritischer Code
+except FehlerTyp:
+    # Fehlerbehandlung</code></pre>
+        </li>
+        <li><code>except Exception as ex</code> fängt alle Fehler ab und speichert sie in <code>ex</code>.</li>
+        <li>Beispiel:
+            <pre><code>try:
+    index = int(input("Index: "))
+    print(liste[index])
+except IndexError:
+    print("Index existiert nicht.")
+except ValueError:
+    print("Bitte Zahl eingeben.")
+except Exception as ex:
+    print("Fehler:", ex)</code></pre>
+        </li>
+        <li>🔁 Vorteil: Das Programm wird bei Fehlern nicht abgebrochen.</li>
+        <li>⚠️ Best Practice: Möglichst gezielte Fehlerbehandlung, kein allgemeiner <code>except</code> im Produktivcode.</li>
+    </ul>
+</section>
+<section>
+    <h2>19. <code>finally</code> – Code immer ausführen, egal ob Fehler oder nicht</h2>
+    <ul>
+        <li><code>finally</code> wird nach allen <code>except</code>-Blöcken ausgeführt – immer!</li>
+        <li>Nutzen: Ressourcen freigeben, Dateien schließen, Logs schreiben etc.</li>
+        <li>Syntax:
+            <pre><code>try:
+    # kritischer Code
+except Exception:
+    # Fehlerbehandlung
+finally:
+    # wird immer ausgeführt</code></pre>
+        </li>
+        <li>💡 Typisches Beispiel: Datei schließen, egal ob Fehler:
+            <pre><code>try:
+    f = open("test.txt", "w")
+    f.write("Hallo Welt")
+except Exception:
+    pass
+finally:
+    f.close()</code></pre>
+        </li>
+        <li><code>finally</code> ersetzt nicht den <code>except</code> – beide sollten kombiniert werden.</li>
+        <li>Empfehlung: In einfachen Fällen nutze den <code>with</code>-Kontextmanager (z. B. <code>with open() as f:</code>).</li>
+    </ul>
+</section>
 </body>
 
 </html>
