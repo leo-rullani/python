@@ -5,3 +5,5 @@ try:
     print(liste[index])
 except Exception as ex: 
     print(f"Es ist ein Fehler aufgetreten.\n{ex}")
+finally: 
+    print("Ich bin fertig!")
